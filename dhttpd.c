@@ -136,7 +136,7 @@ int findreply(char* mimetype,char* filename,char* requestfile)
 	while (!feof(f) && !found)
 	{
 		int tokencnt;
-		fgets(line,sizeof(line),f);
+		if (fgets(line,sizeof(line),f)==NULL) break;
 		l=strlen(line);
 		if (line[0]=='#') l=0;
 		for (i=1;i<l;i++)
