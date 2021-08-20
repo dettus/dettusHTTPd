@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>
+Hello World from dhttpd.
+</title>
+<head>
+<body>
+<center>
+<h1>Hello!</h1>
+Welcome to the world of dhttpd<br>
+<img src="dhttpd.png">
+</center>
+<hr>
+<pre>
+# This is the list of files which are allowed for the webserver to access.
+# Note that this is mostly a CSV file, with TAB as delimiters.
+# Each line should have at least three columns.
+#
+# Column 1: Mimetype. Sorry, this is the hardest part to figure out the 
+# correct ones. But you will manage.
+# Column 2: The actual filename. Including the path, relative to the runpath.
+# Column 3: The requested file, as it comes from the the client.
+# Column 4...n are aliases for this request.
+#
+# Note that the columns start with a /
+# Also note that there is only ONE TAB ALLOWED AT THE MOMENT. (Sorry)
+#
+text/html	helloworld/index.html	/	/index.htm	/index.html
+image/png	helloworld/dhttpd.png	/dhttpd.png
+# The last line contains the 404 message. Column 3 contains the number 404.
+# No, there are no other error codes.
+text/html	helloworld/404.html	404
+#
+#
+# now you can run the webserver with the following command:
+#
+# ./dhttpd.app 8080 helloworld/allowedfiles.csv
+# 
+</pre>
+</body>
+</html>
+
