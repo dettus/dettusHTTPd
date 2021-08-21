@@ -1,4 +1,4 @@
-# dhttpd
+# dhettusHTTPd
 A small, lightweight http daemon.
 
 Just run 
